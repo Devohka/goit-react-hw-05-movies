@@ -3,12 +3,12 @@
 // https://api.themoviedb.org/3/trending/all/day?language=en-US
 
 import Header from "../Header/Header";
-import { Link, Outlet } from "react-router-dom";
+import { Link } from "react-router-dom";
 
-let itemApp = JSON.parse(localStorage.getItem("item"));
+
 // console.log(itemApp)
 export default function Home() {
-
+const itemApp = JSON.parse(localStorage.getItem("item"));
     fetch("https://api.themoviedb.org/3/trending/all/day?api_key=a49a343936bdd37a7594fe7daf741bfa")
         .then(data =>
             data.json()
@@ -29,10 +29,9 @@ export default function Home() {
                 {itemApp.results.map(item => {
                     return (
                         <>
-                            <li>
-                                <Link to="film" item={item}>{item.title}</Link>
+                            <li key={item.id}>
+                                <Link to={`movies/${item.id}`} >{item.original_title}</Link>
                             </li>
-                            <Outlet />
                         </>
                     );
                 })}
