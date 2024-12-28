@@ -5,9 +5,12 @@ import { useParams } from "react-router-dom";
 export default function Film() {
     const item = JSON.parse(localStorage.getItem("filmFull"));
     const { id } = useParams();
+    console.log(item);
+    // https://api.themoviedb.org/3/movie/{movie_id}/images
+    console.log(`https://api.themoviedb.org/3/movie/${item.id}/images${item.backdrop_path}`);
     console.log(id);
     // https://api.themoviedb.org/3/movie/${id}&include_adult=false&language=en-US&api_key=a49a343936bdd37a7594fe7daf741bfa
-    fetch(`https://api.themoviedb.org/3/movie/${id}?language=en-US&api_key=a49a343936bdd37a7594fe7daf741bfa`)
+    fetch(`https://api.themoviedb.org/3/movie/${id}?api_key=a49a343936bdd37a7594fe7daf741bfa&language=en-US`)
         .then(data =>
             data.json()
         ).then(data =>
@@ -25,7 +28,8 @@ export default function Film() {
 
 
             <div>
-                <img src={item.backdrop_path} alt={item.original_title} />
+            {/* https://image.tmdb.org/t/p/w300/${movieDetails.poster_path} */}
+                <img src={`https://image.tmdb.org/t/p/w300/${item.poster_path}`} alt={item.original_title} />
                 <h2>{item.original_title}</h2>
                 <h2>Overview</h2>
                 <p>{item.overview}</p>
