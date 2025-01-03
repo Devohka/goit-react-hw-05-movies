@@ -35,7 +35,7 @@ const [filmItem, useStateSet] = useState(JSON.parse(localStorage.getItem("itemFi
                         <>
                             <li key={item.id}>
 
-                                <Link to={`${item.id}`} >{item.title}</Link>
+                                <Link to={`/${item.id}`} >{item.title}</Link>
 
                             </li>
 
