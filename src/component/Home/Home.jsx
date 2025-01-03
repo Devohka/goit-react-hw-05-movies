@@ -4,11 +4,11 @@
 
 import Header from "../Header/Header";
 import { Link } from "react-router-dom";
-
+import { useState } from "react";
 
 // console.log(itemApp)
 export default function Home() {
-const itemApp = JSON.parse(localStorage.getItem("item"));
+const [itemApp, itemAppSet] = useState(JSON.parse(localStorage.getItem("item")));
     fetch("https://api.themoviedb.org/3/trending/all/day?api_key=a49a343936bdd37a7594fe7daf741bfa")
         .then(data =>
             data.json()

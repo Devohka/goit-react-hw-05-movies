@@ -1,9 +1,9 @@
 import { Link, Outlet } from "react-router-dom";
 import { useParams } from "react-router-dom";
-
+import { useState } from "react";
 
 export default function Film() {
-    const item = JSON.parse(localStorage.getItem("filmFull"));
+    const [item, itemSet] = useState(JSON.parse(localStorage.getItem("filmFull")));
     const { id } = useParams();
     console.log(item);
     // https://api.themoviedb.org/3/movie/{movie_id}/images
@@ -28,7 +28,7 @@ export default function Film() {
 
 
             <div>
-            {/* https://image.tmdb.org/t/p/w300/${movieDetails.poster_path} */}
+                {/* https://image.tmdb.org/t/p/w300/${movieDetails.poster_path} */}
                 <img src={`https://image.tmdb.org/t/p/w300/${item.poster_path}`} alt={item.original_title} />
                 <h2>{item.original_title}</h2>
                 <h2>Overview</h2>
