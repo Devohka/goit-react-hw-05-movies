@@ -23,7 +23,7 @@ export default function Film() {
     // console.log(item.production_companies[0].logo_path)
     return (
         <>
-            <Link to="/">Back Home</Link>
+            <Link to="/goit-react-hw-05-movies/">Back Home</Link>
 
 
 

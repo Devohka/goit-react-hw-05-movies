@@ -8,10 +8,10 @@ export default function Header() {
         <nav>
             <ul>
                 <li>
-                    <Link to="/">Home</Link>
+                    <Link to="/goit-react-hw-05-movies/">Home</Link>
                 </li>
                 <li>
-                    <Link to="/movies">Movies</Link>
+                    <Link to="/goit-react-hw-05-movies/movies">Movies</Link>
                 </li>
 
             </ul>
