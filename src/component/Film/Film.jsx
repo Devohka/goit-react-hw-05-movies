@@ -10,7 +10,7 @@ export default function Film() {
     console.log(`https://api.themoviedb.org/3/movie/${item.id}/images${item.backdrop_path}`);
     console.log(id);
     // https://api.themoviedb.org/3/movie/${id}&include_adult=false&language=en-US&api_key=a49a343936bdd37a7594fe7daf741bfa
-    fetch(`https://api.themoviedb.org/3/movie/${id}?api_key=a49a343936bdd37a7594fe7daf741bfa&language=en-US`)
+    fetch(`https://api.themoviedb.org/3/movie/${item.id}?api_key=a49a343936bdd37a7594fe7daf741bfa&language=en-US`)
         .then(data =>
             data.json()
         ).then(data =>
