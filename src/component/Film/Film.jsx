@@ -24,6 +24,7 @@ export default function Film() {
 
 
     // console.log(item.production_companies[0].logo_path)
+    // console.log(item.poster_path)
     return (
         <>
             <Link to="/goit-react-hw-05-movies/">Back Home</Link>
@@ -32,7 +33,9 @@ export default function Film() {
 
             <div>
                 {/* https://image.tmdb.org/t/p/w300/${movieDetails.poster_path} */}
-                <img src={`https://image.tmdb.org/t/p/w300/${item.poster_path}`} alt={item.original_title} />
+
+                        <img src={`https://image.tmdb.org/t/p/w300/${item.poster_path}`} alt={item.original_title} />
+   
                 <h2>{item.original_title}</h2>
                 <h2>Overview</h2>
                 <p>{item.overview}</p>

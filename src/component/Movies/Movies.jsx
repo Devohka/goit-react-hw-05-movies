@@ -1,4 +1,4 @@
-import { Link} from "react-router-dom";
+import { Link, Navigate} from "react-router-dom";
 import Header from "../Header/Header";
 import { useState } from "react";
 
@@ -32,8 +32,8 @@ export default function Movies() {
 
 
             <ul>
-                {/* {filmItem.results.length > 0 ? (
-                    <> */}
+                {filmItem.length > 0 ? (
+                    <>
                         {filmItem.map(item => {
                             return (
                                 <>
@@ -46,12 +46,12 @@ export default function Movies() {
                                 </>
                             );
                         })}
-                    {/* </>
-                ) : ( */}
-                    {/* <>
-                        {/* <Navigate to="/goit-react-hw-05-movies/movies/"  /> */}
-                  {/*   </>
-                )} */}
+                    </>
+                ) : ( 
+                    <>
+                         <Navigate to="/goit-react-hw-05-movies/non"  replace/>
+                   </>
+                )}
 
 
 
