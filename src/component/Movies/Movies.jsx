@@ -3,8 +3,7 @@ import Header from "../Header/Header";
 
 
 export default function Movies() {
-    const wordFilm = JSON.parse(localStorage.getItem("film"));
-    const filmItem = JSON.parse(localStorage.getItem("itemFilm"));
+
     fetch(`https://api.themoviedb.org/3/search/movie?query=${wordFilm}&include_adult=false&language=en-US&api_key=a49a343936bdd37a7594fe7daf741bfa`)
         .then(data =>
             data.json()
@@ -18,7 +17,8 @@ export default function Movies() {
         localStorage.setItem("film", JSON.stringify(e.target.elements.name.value))
 
     };
-
+    const wordFilm = JSON.parse(localStorage.getItem("film"));
+    const filmItem = JSON.parse(localStorage.getItem("itemFilm"));
     return (
         <>
             <Header></Header>
@@ -46,9 +46,9 @@ export default function Movies() {
                         })}
                     </>
                 ) : (
-                <>
-                    <Navigate to="/goit-react-hw-05-movies/non" replace />
-                </>
+                    <>
+                        <Navigate to="/goit-react-hw-05-movies/non" replace />
+                    </>
                 )}
 
 

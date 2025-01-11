@@ -3,7 +3,7 @@ import { useParams } from "react-router-dom";
 
 
 export default function Reviews() {
-    const item = JSON.parse(localStorage.getItem("reviews"));
+
     const { id } = useParams();
     console.log(id);
     // https://api.themoviedb.org/3/movie/${id}&include_adult=false&language=en-US&api_key=a49a343936bdd37a7594fe7daf741bfa
@@ -16,7 +16,7 @@ export default function Reviews() {
         ).catch(error =>
             console.log(error)
         );
-
+    const item = JSON.parse(localStorage.getItem("reviews"));
     return (
         <>
             <ul>
