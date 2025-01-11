@@ -7,7 +7,7 @@ export default function Film() {
     console.log(id);
 
 
-    console.log(item);
+ 
     // https://api.themoviedb.org/3/movie/{movie_id}/images
     // console.log(`https://api.themoviedb.org/3/movie/${item.id}/images${item.backdrop_path}`);
 
@@ -21,8 +21,9 @@ export default function Film() {
         ).catch(error =>
             console.log(error)
         );
-        
-    const item = JSON.parse(localStorage.getItem("filmFull"));
+
+    const item = JSON.parse(localStorage.getItem("filmFull")); 
+      console.log(item);
     // console.log(item.production_companies[0].logo_path)
     return (
         <>
