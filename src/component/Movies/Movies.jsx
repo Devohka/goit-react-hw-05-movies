@@ -37,7 +37,7 @@ export default function Movies() {
                                 <>
                                     <li key={item.id}>
 
-                                        <Link to={`/movies/${item.id}`} >{item.title}</Link>
+                                        <Link to={`/goit-react-hw-05-movies/movies/${item.id}`} >{item.title}</Link>
 
                                     </li>
 

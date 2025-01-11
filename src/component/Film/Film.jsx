@@ -4,11 +4,11 @@ import { useState } from "react";
 
 export default function Film() {
     const [item, itemSet] = useState(JSON.parse(localStorage.getItem("filmFull")));
-    const { id } = useParams();
+    // const { id } = useParams();
     console.log(item);
     // https://api.themoviedb.org/3/movie/{movie_id}/images
     console.log(`https://api.themoviedb.org/3/movie/${item.id}/images${item.backdrop_path}`);
-    console.log(id);
+    // console.log(id);
     // https://api.themoviedb.org/3/movie/${id}&include_adult=false&language=en-US&api_key=a49a343936bdd37a7594fe7daf741bfa
     fetch(`https://api.themoviedb.org/3/movie/${item.id}?api_key=a49a343936bdd37a7594fe7daf741bfa&language=en-US`)
         .then(data =>
