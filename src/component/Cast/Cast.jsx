@@ -1,9 +1,9 @@
 
 import { useParams } from "react-router-dom";
-import { useState } from "react";
+
 
 export default function Cast() {
-    const [item, itemSet] = useState(JSON.parse(localStorage.getItem("cast")));
+    const item = JSON.parse(localStorage.getItem("cast"));
     const { id } = useParams();
     console.log(id);
     // https://api.themoviedb.org/3/movie/${id}&include_adult=false&language=en-US&api_key=a49a343936bdd37a7594fe7daf741bfa

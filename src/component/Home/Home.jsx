@@ -4,11 +4,11 @@
 
 import Header from "../Header/Header";
 import { Link } from "react-router-dom";
-import { useState } from "react";
+
 
 // console.log(itemApp)
 export default function Home() {
-    const [itemApp, itemAppSet] = useState(JSON.parse(localStorage.getItem("item")));
+    const itemApp = JSON.parse(localStorage.getItem("item"));
     fetch("https://api.themoviedb.org/3/trending/all/day?api_key=a49a343936bdd37a7594fe7daf741bfa")
         .then(data =>
             data.json()
@@ -30,7 +30,7 @@ export default function Home() {
                     return (
                         <>
                             <li key={item.id}>
-                                <Link to={`movies/${item.id}`} >
+                                <Link to={`/goit-react-hw-05-movies/movies/${item.id}`} >
                                    {item.title}
                                    {item.name}
                                 </Link>
