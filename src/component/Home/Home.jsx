@@ -8,7 +8,7 @@ import { useState } from "react";
 
 // console.log(itemApp)
 export default function Home() {
-const [itemApp, itemAppSet] = useState(JSON.parse(localStorage.getItem("item")));
+    const [itemApp, itemAppSet] = useState(JSON.parse(localStorage.getItem("item")));
     fetch("https://api.themoviedb.org/3/trending/all/day?api_key=a49a343936bdd37a7594fe7daf741bfa")
         .then(data =>
             data.json()
@@ -30,7 +30,10 @@ const [itemApp, itemAppSet] = useState(JSON.parse(localStorage.getItem("item")))
                     return (
                         <>
                             <li key={item.id}>
-                                <Link to={`movies/${item.id}`} >{item.original_title}</Link>
+                                <Link to={`movies/${item.id}`} >
+                                   {item.title}
+                                   {item.name}
+                                </Link>
                             </li>
                         </>
                     );
