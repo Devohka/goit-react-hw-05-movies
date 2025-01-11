@@ -1,13 +1,13 @@
 import { Link, Outlet } from "react-router-dom";
 import { useParams } from "react-router-dom";
-
+import { useState } from "react";
 
 export default function Film() {
     const { id } = useParams();
-    console.log(id);
+    // console.log(id);
+    const [item, setItem] = useState({});
 
 
- 
     // https://api.themoviedb.org/3/movie/{movie_id}/images
     // console.log(`https://api.themoviedb.org/3/movie/${item.id}/images${item.backdrop_path}`);
 
@@ -16,14 +16,13 @@ export default function Film() {
         .then(data =>
             data.json()
         ).then(data =>
-            localStorage.setItem("filmFull", JSON.stringify(data))
+            setItem(data)
             // console.log(data)
         ).catch(error =>
             console.log(error)
         );
 
-    const item = JSON.parse(localStorage.getItem("filmFull")); 
-      console.log(item);
+
     // console.log(item.production_companies[0].logo_path)
     return (
         <>
