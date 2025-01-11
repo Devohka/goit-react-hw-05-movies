@@ -35,7 +35,7 @@ export default function Home() {
                             <li key={item.id}>
                                 <Link to={`/goit-react-hw-05-movies/movies/${item.id}`} >
                                    {item.original_title}
-                                   {item.original_name}
+                                   {/* {item.original_name} */}
                                 </Link>
                             </li>
                         </>
